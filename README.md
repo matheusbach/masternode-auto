@@ -1,4 +1,4 @@
-# ZCore
+# ZCore Masternode Auto Install
 Shell script to install a ZCore MasterNode on a Linux server running Ubuntu 16.04 x64. Use it on your own risk.<br>
 Multiples MN in same VPS not tested<br>
 This script was tested on [www.vultr.com](https://www.vultr.com/?ref=7145379) Vps
