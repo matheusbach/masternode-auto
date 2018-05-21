@@ -6,7 +6,7 @@ This script was tested on [www.vultr.com](https://www.vultr.com/?ref=7145379) Vp
 ***
 ## Installation:
 ```
-sudo curl -o- https://zcore.ch/mninstall.sh | bash
+sudo curl -o- https://raw.githubusercontent.com/zcore-coin/masternode-alias/master/install.sh | bash
 ```
 ***
 
