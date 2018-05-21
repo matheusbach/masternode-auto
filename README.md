@@ -17,8 +17,8 @@ Follow the steps and save resumen information
 After the MN is ZCore and running, you need to configure the desktop wallet accordingly. Here are the steps for ZCore Wallet
 1. Open the **ZCore Desktop Wallet**.
 1. Go to RECEIVE and create a New Address: **MasterNode01**
-1. Send **1000** **ZCR** to **MasterNode01** address.
-1. Wait for 20 confirmations.
+1. Send **5000** **ZCR** to **MasterNode01** address.
+1. Wait for 15 confirmations.
 1. Go to **Tools -> "Debug console - Console"**
 1. Type the following command: **masternode outputs**
 1. Go to  **Tools -> "Open Masternode Configuration File"**
