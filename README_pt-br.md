@@ -31,6 +31,12 @@ alias IP:port masternodeprivkey collateral_output_txid collateral_output_index
 * masternodeprivkey: **Masternode Private Key** #see resumen masternode install script
 * collateral_output_txid: **First value from Step 6**
 * collateral_output_index:  **Second value from Step 6**
+
+Exemplo:
+```
+mn1 127.0.0.2:19999 93HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0
+```
+
 1. Salve e feche o arquivo.
 1. Vá até a **Aba Masternodes**. Se não aparecer a aba, habilite em: **Configurações - Opções - Carteira - Mostrar Aba Masternodes**
 1. Click **Update status** to see your node. If it is not shown, close the wallet and start it again. 
