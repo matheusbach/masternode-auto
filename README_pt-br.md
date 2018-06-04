@@ -15,14 +15,14 @@ Siga os passos e guarde a informação do resumo
 ## Configuração da Wallet Desktop
 
 Depois que o MN ZCore estiver em execução, você precisará configurar a carteira da área de trabalho. Aqui estão os passos para a ZCore Wallet:
-1. Open the **ZCore Desktop Wallet**.
-1. Go to RECEIVE and create a New Address: **MasterNode01**
-1. Send **5000** **ZCR** to **MasterNode01** address.
-1. Wait for 15 confirmations.
-1. Go to **Tools -> "Debug console - Console"**
-1. Type the following command: **masternode outputs**
-1. Go to  **Tools -> "Open Masternode Configuration File"**
-1. Add the following entry:
+1. Abra a **ZCore Desktop Wallet**.
+1. Vá até RECEBEER e crie um novo endereço com o rótulo: **MasterNode01**
+1. Envie **5000** **ZCR** para **MasterNode01** este endereço.
+1. Aguarde po 15 confirmações.
+1. Vá até **Ferramentas -> "Debug console - Console"**
+1. Execute o comando: **masternode outputs**
+1. Vá até  **Ferramentas -> "Open Masternode Configuration File"**
+1. Adicione a seguinte entrada:
 ```
 alias IP:port masternodeprivkey collateral_output_txid collateral_output_index
 ```
@@ -31,8 +31,8 @@ alias IP:port masternodeprivkey collateral_output_txid collateral_output_index
 * masternodeprivkey: **Masternode Private Key** #see resumen masternode install script
 * collateral_output_txid: **First value from Step 6**
 * collateral_output_index:  **Second value from Step 6**
-1. Save and close the file.
-1. Go to **Masternode Tab**. If you tab is not shown, please enable it from: **Settings - Options - Wallet - Show Masternodes Tab**
+1. Salve e feche o arquivo.
+1. Vá até a **Aba Masternodes**. Se não aparecer a aba, habilite em: **Configurações - Opções - Carteira - Mostrar Aba Masternodes**
 1. Click **Update status** to see your node. If it is not shown, close the wallet and start it again. 
 1. Select your MN and click **Start Alias** to start it.
 1. Alternatively, open **Debug Console** and type:
