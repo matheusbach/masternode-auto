@@ -3,6 +3,13 @@
 TMP_FOLDER=$(mktemp -d)
 NAME_COIN="ZCore"
 GIT_REPO="https://github.com/zcore-coin/zcore-source.git"
+
+FILE_BIN="zcore-1.6.1-x86_64-linux-gnu.tar.gz"
+BIN_DOWN="https://github.com/zcore-coin/zcore-source/releases/download/v1.6.1/${FILE_BIN}"
+GIT_SENT="https://github.com/zcore-coin/sentinel.git"
+FOLDER_BIN="zcore-1.6.1"
+
+
 BINARY_FILE="zcored"
 BINARY_CLI="/usr/local/bin/zcore-cli"
 BINARY_CLI_FILE="zcore-cli"
@@ -28,7 +35,7 @@ function prepare_system() {
 	apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" make software-properties-common \
 	build-essential libtool autoconf libssl-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev libboost-program-options-dev \
 	libboost-system-dev libboost-test-dev libboost-thread-dev sudo automake git wget pwgen curl libdb4.8-dev bsdmainutils \
-	libdb4.8++-dev libminiupnpc-dev libgmp3-dev ufw fail2ban pwgen libzmq3-dev autotools-dev pkg-config libevent-dev libboost-all-dev
+	libdb4.8++-dev libminiupnpc-dev libgmp3-dev ufw fail2ban pwgen libzmq3-dev autotools-dev pkg-config libevent-dev libboost-all-dev python-virtualenv virtualenv
 	clear
 	if [ "$?" -gt "0" ];
 	  then
@@ -39,7 +46,7 @@ function prepare_system() {
 	    echo "apt-get update"
 	    echo "apt install -y make build-essential libtool software-properties-common autoconf libssl-dev libboost-dev libboost-chrono-dev libboost-filesystem-dev \
 	libboost-program-options-dev libboost-system-dev libboost-test-dev libboost-thread-dev sudo automake git pwgen curl libdb4.8-dev \
-	bsdmainutils libdb4.8++-dev libminiupnpc-dev libgmp3-dev ufw fail2ban pwgen libzmq3-dev autotools-dev pkg-config libevent-dev libboost-all-dev"
+	bsdmainutils libdb4.8++-dev libminiupnpc-dev libgmp3-dev ufw fail2ban pwgen libzmq3-dev autotools-dev pkg-config libevent-dev libboost-all-dev python-virtualenv virtualenv"
 	 exit 1
 	fi
 
@@ -82,17 +89,24 @@ function checks() {
 
 function compile_server() {
   	echo -e "Clone git repo and compile it. This may take some time. Press a key to continue."
-	read -n 1 -s -r -p ""
-
-	git clone $GIT_REPO $TMP_FOLDER
+	
+	wget $BIN_DOWN -P $TMP_FOLDER
 	cd $TMP_FOLDER
+	tar -xzvf $FILE_BIN
+	cd $FOLDER_BIN
+	cp * /usr/local/ -a
 
-	./autogen.sh
-	./configure
-	make
+	#read -n 1 -s -r -p ""
 
-	cp -a $TMP_FOLDER/src/$BINARY_FILE $BINARY_PATH
-	cp -a $TMP_FOLDER/src/$BINARY_CLI_FILE $BINARY_CLI
+	#git clone $GIT_REPO $TMP_FOLDER
+	#cd $TMP_FOLDER
+
+	#./autogen.sh
+	#./configure
+	#make
+
+	#cp -a $TMP_FOLDER/src/$BINARY_FILE $BINARY_PATH
+	#cp -a $TMP_FOLDER/src/$BINARY_CLI_FILE $BINARY_CLI
   clear
 }
 
@@ -230,6 +244,18 @@ EOF
   fi
 }
 
+function install_sentinel() {
+	runuser -l worker01 -c 'cd /home/worker01/'
+	runuser -l worker01 -c "git clone ${GIT_SENT} /home/worker01/sentinel-zcr"
+	runuser -l worker01 -c 'virtualenv /home/worker01/sentinel-zcr/venv'
+	runuser -l worker01 -c '/home/worker01/sentinel-zcr/venv/bin/pip install -r /home/worker01/sentinel-zcr/requirements.txt'
+	runuser -l worker01 -c 'crontab -l > mycron'
+	runuser -l worker01 -c 'echo "* * * * * cd /home/worker01/sentinel-zcr && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1" >> mycron'
+	runuser -l worker01 -c 'crontab mycron'
+	runuser -l worker01 -c 'rm mycron'
+}
+
+
 function resumen() {
  echo
  echo -e "================================================================================================================================"
@@ -250,6 +276,7 @@ function setup_node() {
 	create_key
 	update_config
 	enable_firewall
+	install_sentinel
 	systemd_up
 	resumen
 }
