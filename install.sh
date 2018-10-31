@@ -191,6 +191,10 @@ maxconnections=256
 masternode=1
 externalip=$NODEIP:$PORT_COIN
 masternodeprivkey=$KEY_COIN
+addnode=45.76.15.20:17291
+addnode=217.61.121.168:17291
+addnode=217.61.15.29:17291
+addnode=217.61.110.170:17291
 EOF
   chown -R $WORKER: $WORKER_FOLDER >/dev/null
 }
