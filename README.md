@@ -60,6 +60,7 @@ systemctl is-enabled USER.service #To check whetether zcore service is enabled o
 ***
 
 ## Update:
+**Always back up before any update!!!**
 Just run the update if you have installed your MN with the script above.
 Run as root.
 ```
