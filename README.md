@@ -58,3 +58,9 @@ systemctl stop USER.service #To stop zcore service.
 systemctl is-enabled USER.service #To check whetether zcore service is enabled on boot or not.
 ```
 ***
+
+## Update:
+```
+sudo curl -o- https://raw.githubusercontent.com/zcore-coin/masternode-auto/master/update.sh | bash
+```
+***
