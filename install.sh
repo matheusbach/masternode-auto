@@ -4,10 +4,10 @@ TMP_FOLDER=$(mktemp -d)
 NAME_COIN="ZCore"
 GIT_REPO="https://github.com/zcore-coin/zcore-source.git"
 
-FILE_BIN="zcore-1.6.1-x86_64-linux-gnu.tar.gz"
-BIN_DOWN="https://github.com/zcore-coin/zcore-source/releases/download/v1.6.1/${FILE_BIN}"
+FILE_BIN="zcore-1.6.3-x86_64-linux-gnu.tar.gz"
+BIN_DOWN="https://github.com/zcore-coin/zcore-source/releases/download/v1.6.3/${FILE_BIN}"
 GIT_SENT="https://github.com/zcore-coin/sentinel.git"
-FOLDER_BIN="zcore-1.6.1"
+FOLDER_BIN="zcore-1.6.3"
 
 
 BINARY_FILE="zcored"
