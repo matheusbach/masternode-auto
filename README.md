@@ -60,8 +60,8 @@ systemctl is-enabled USER.service #To check whetether zcore service is enabled o
 ***
 
 ## Update:
-**Always back up before any update!!!**
-Just run the update if you have installed your MN with the script above.
+**Always back up your wallet before any update!!!**<br>
+Just run the update if you have installed your MN with the script above.<br>
 Run as root.
 ```
 sudo curl -o- https://raw.githubusercontent.com/zcore-coin/masternode-auto/master/update.sh | bash
