@@ -13,4 +13,3 @@ service worker01 start
 sleep 5
 
 runuser -l worker01 -c 'zcore-cli getinfo'
-runuser -l worker01 -c 'zcore-cli masternode status'
