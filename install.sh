@@ -4,19 +4,19 @@ TMP_FOLDER=$(mktemp -d)
 NAME_COIN="ZCore"
 GIT_REPO="https://github.com/zcore-coin/zcore-source.git"
 
-FILE_BIN="zcore-1.6.3-x86_64-linux-gnu.tar.gz"
-BIN_DOWN="https://github.com/zcore-coin/zcore-source/releases/download/v1.6.3/${FILE_BIN}"
-GIT_SENT="https://github.com/zcore-coin/sentinel.git"
-FOLDER_BIN="zcore-1.6.3"
+FILE_BIN="zcore-2.0.1-x86_64-linux-gnu.tar.gz"
+BIN_DOWN="https://github.com/zcore-coin/zcore-2.0/releases/download/v2.0.1/${FILE_BIN}"
+#GIT_SENT="https://github.com/zcore-coin/sentinel.git"
+FOLDER_BIN="zcore-2.0.1"
 
 
 BINARY_FILE="zcored"
 BINARY_CLI="/usr/local/bin/zcore-cli"
 BINARY_CLI_FILE="zcore-cli"
 BINARY_PATH="/usr/local/bin/${BINARY_FILE}"
-DIR_COIN=".zcore"
+DIR_COIN=".zcr"
 CONFIG_FILE="zcore.conf"
-DEFULT_PORT=17291
+DEFULT_PORT=17293
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -280,7 +280,7 @@ function setup_node() {
 	create_key
 	update_config
 	enable_firewall
-	install_sentinel
+	#install_sentinel
 	systemd_up
 	resumen
 }
