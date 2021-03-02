@@ -57,12 +57,3 @@ systemctl stop USER.service #To stop rdctoken service.
 systemctl is-enabled USER.service #To check whetether rdctoken service is enabled on boot or not.
 ```
 ***
-
-## Update:
-**Always back up your wallet before any update!!!**<br>
-Just run the update if you have installed your MN with the script above.<br>
-Run as root.
-```
-sudo curl -o- https://raw.githubusercontent.com/matheusbach/rdct-masternode-auto/master/update.sh | bash
-```
-***
