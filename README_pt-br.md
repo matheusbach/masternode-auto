@@ -1,14 +1,12 @@
-# Auto Instalação Masternode ZCore
+# Auto Instalação Masternode RDCToken
 Shell Script para instalar um Masternode ZCore em um servidor Linux. Compatível com Ubuntu 16.04 x64. 
 * Use-o por sua conta e risco.
 * Múltiplos MN no mesmo VPS não testado
 
-Este script foi testado em VPS [www.vultr.com](https://www.vultr.com/?ref=7145379)
-
 ***
 ## Instalação:
 ```
-sudo curl -o- https://raw.githubusercontent.com/zcore-coin/masternode-auto/master/install.sh | bash
+sudo curl -o- https://raw.githubusercontent.com/matheusbach/rdct-masternode-auto/master/install.sh | bash
 ```
 ***
 
@@ -16,11 +14,11 @@ Siga os passos e guarde a informação do resumo
 
 ## Configuração da Wallet Desktop
 
-Depois que o MN ZCore estiver em execução, você precisará configurar a carteira da área de trabalho. Aqui estão os passos para a ZCore Wallet:
-1. Abra a **ZCore Desktop Wallet**.
+Depois que o MN RDCToken estiver em execução, você precisará configurar a carteira da área de trabalho. Aqui estão os passos para a RDCToken Wallet:
+1. Abra a **RDCToken Desktop Wallet**.
 2. Vá até **ENDEREÇOS DE RECEBIMENTO em ARQUIVO** e crie um novo endereço com o rótulo: **MasterNode01**
-3. Envie **5000** **ZCR** para **MasterNode01** este endereço.
-4. Aguarde 15 confirmações.
+3. Envie **7500** **RDCT** para **MasterNode01** este endereço.
+4. Aguarde pelo menos 6 confirmações.
 5. Vá até **Ferramentas -> "Debug console - Console"**
 6. Execute o comando: **masternode genkey** . 
    Anote como masternodeprivkey
@@ -30,7 +28,7 @@ Depois que o MN ZCore estiver em execução, você precisará configurar a carte
 9. Feche a carteira
 10. Adicione a seguinte entrada:
 ```
-apelido IP:17291 masternodeprivkey collateral_output_txid collateral_output_index
+apelido ip masternodeprivkey collateral_output_txid collateral_output_index
 ```
 * Apelido: **MasterNode01** 
 * IP: Endereço de IP da VPS
@@ -56,9 +54,9 @@ masternode start-alias MasterNode01
 ## Comandos:
 Logue em seu masternode, e usando o cliente RPC:
 ```
-zcore-cli mnsync status
-zcore-cli getinfo
-zcore-cli masternode status #Esse comando vai mostrar os status do seu masternode
+rdct-cli mnsync status
+rdct-cli getinfo
+rdct-cli masternode status #Esse comando vai mostrar os status do seu masternode
 ```
 Caso você também queira, verificar/iniciar/parar, execute um dos seguintes comandos usando **root**:
 ```
