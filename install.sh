@@ -1,22 +1,22 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-NAME_COIN="ZCore"
-GIT_REPO="https://github.com/zcore-coin/zcore-source.git"
+NAME_COIN="RDCToken"
+GIT_REPO="https://github.com/reidocoin/rdctoken.git"
 
-FILE_BIN="zcore-2.0.2.2-x86_64-linux-gnu.tar.gz"
-BIN_DOWN="https://github.com/zcore-coin/zcore-2.0/releases/download/v2.0.2.2/${FILE_BIN}"
-#GIT_SENT="https://github.com/zcore-coin/sentinel.git"
-FOLDER_BIN="zcore-2.0.2"
+FILE_BIN="RDCToken_v1.5.0.3-ubuntu_16.04.tar.xz"
+BIN_DOWN="https://github.com/reidocoin/rdctoken/releases/download/v1.5.0.3/${FILE_BIN}"
+#GIT_SENT=""
+FOLDER_BIN="RDCToken_v1.5.0.3-ubuntu_16.04"
 
 
-BINARY_FILE="zcored"
-BINARY_CLI="/usr/local/bin/zcore-cli"
-BINARY_CLI_FILE="zcore-cli"
+BINARY_FILE="rdctd"
+BINARY_CLI="/usr/local/bin/rdct-cli"
+BINARY_CLI_FILE="rdct-cli"
 BINARY_PATH="/usr/local/bin/${BINARY_FILE}"
-DIR_COIN=".zcr"
-CONFIG_FILE="zcore.conf"
-DEFULT_PORT=17293
+DIR_COIN=".rdct"
+CONFIG_FILE="rdct.conf"
+DEFULT_PORT=49846
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -191,136 +191,26 @@ maxconnections=256
 masternode=1
 externalip=$NODEIP:$PORT_COIN
 masternodeprivkey=$KEY_COIN
-addnode=[2001:19f0:ac01:116f:5400:3ff:fe14:78c5]:17293
-addnode=[2001:41d0:800:1a6d:1c00::22]:17293
-addnode=[2a01:4f9:4b:1a8a::242]:17293
-addnode=[2a02:c205:2028:7943::2]:17293
-addnode=[2a02:c207:2043:2116::19]:17293
-addnode=135.181.114.181:50342
-addnode=138.201.192.203:45826
-addnode=144.91.124.2:40738
-addnode=144.91.124.2:49826
-addnode=144.91.64.31:17293
-addnode=144.91.65.121:59798
-addnode=144.91.65.131:59276
-addnode=144.91.65.201:57652
-addnode=144.91.66.140:50214
-addnode=144.91.78.23:52870
-addnode=144.91.78.24:39472
-addnode=144.91.78.27:50498
-addnode=161.97.125.4:33468
-addnode=164.68.100.133:48694
-addnode=164.68.100.208:38178
-addnode=164.68.103.60:42710
-addnode=164.68.105.184:54136
-addnode=164.68.105.189:43942
-addnode=164.68.107.91:53538
-addnode=164.68.113.172:17293
-addnode=164.68.114.64:34730
-addnode=164.68.96.198:40528
-addnode=164.68.98.146:56680
-addnode=164.68.99.209:53480
-addnode=164.68.99.211:48432
-addnode=164.68.99.213:57790
-addnode=164.68.99.214:39656
-addnode=167.86.103.157:37598
-addnode=167.86.103.158:56880
-addnode=167.86.103.160:34468
-addnode=167.86.103.162:55434
-addnode=167.86.103.166:60204
-addnode=167.86.103.167:32910
-addnode=167.86.106.183:41286
-addnode=167.86.106.183:57154
-addnode=167.86.106.212:44058
-addnode=167.86.106.244:38040
-addnode=167.86.107.11:17293
-addnode=167.86.107.226:41586
-addnode=167.86.107.230:55170
-addnode=167.86.107.9:40618
-addnode=167.86.113.138:34400
-addnode=167.86.113.200:48654
-addnode=167.86.115.19:55612
-addnode=167.86.115.202:56002
-addnode=167.86.115.205:51406
-addnode=167.86.115.206:46530
-addnode=167.86.115.21:40318
-addnode=167.86.120.125:44250
-addnode=167.86.120.131:51808
-addnode=167.86.120.132:40084
-addnode=167.86.120.33:43384
-addnode=167.86.123.170:35858
-addnode=167.86.125.119:37092
-addnode=167.86.125.167:45178
-addnode=167.86.125.185:48526
-addnode=167.86.125.242:44558
-addnode=167.86.125.249:40524
-addnode=167.86.125.80:47276
-addnode=167.86.126.117:40010
-addnode=167.86.127.215:49922
-addnode=167.86.69.69:47032
-addnode=167.86.76.239:60610
-addnode=167.86.77.21:47444
-addnode=167.86.96.134:60312
-addnode=167.86.96.198:53842
-addnode=167.86.96.200:52942
-addnode=173.212.194.224:56028
-addnode=173.212.196.224:60284
-addnode=173.212.198.65:41124
-addnode=173.212.201.15:37984
-addnode=173.212.207.52:57086
-addnode=173.212.208.102:46792
-addnode=173.212.215.124:42942
-addnode=173.212.215.150:58302
-addnode=173.212.215.204:58896
-addnode=173.212.217.124:47382
-addnode=173.212.218.39:17293
-addnode=173.212.226.248:55304
-addnode=173.212.239.104:42132
-addnode=173.212.240.125:34948
-addnode=173.212.242.205:33850
-addnode=173.249.10.201:46028
-addnode=173.249.13.165:40022
-addnode=173.249.14.174:39032
-addnode=173.249.14.74:17293
-addnode=173.249.19.104:44416
-addnode=173.249.30.47:35730
-addnode=173.249.33.133:52256
-addnode=173.249.46.58:52108
-addnode=177.103.138.249:64509
-addnode=178.238.236.223:42940
-addnode=178.238.236.223:57316
-addnode=185.2.100.187:39202
-addnode=185.2.100.187:56972
-addnode=185.2.100.56:33228
-addnode=185.2.103.59:17293
-addnode=185.244.193.249:48772
-addnode=207.148.24.193:56914
-addnode=207.180.230.81:17293
-addnode=45.77.220.117:38470
-addnode=46.164.238.140:54956
-addnode=5.189.162.120:51792
-addnode=5.189.170.32:17293
-addnode=62.171.141.130:39496
-addnode=62.171.189.163:34598
-addnode=78.47.228.146:60220
-addnode=79.143.185.27:38214
-addnode=79.143.186.4:36124
-addnode=79.143.186.4:57206
-addnode=8.6.193.216:17293
-addnode=80.241.211.189:51928
-addnode=80.241.211.189:59168
-addnode=80.241.213.249:56080
-addnode=80.241.213.26:40462
-addnode=80.241.213.26:57812
-addnode=80.241.214.206:44940
-addnode=80.241.222.50:47538
-addnode=80.241.223.81:17293
-addnode=82.155.53.190:40050
-addnode=82.99.131.218:61457
-addnode=85.214.71.46:17293
-addnode=86.57.164.166:44926
-addnode=95.216.38.85:49778
-addnode=95.217.145.114:39396
+addnode=n1.rdctoken.io:49846
+addnode=n2.rdctoken.io:49846
+addnode=n3.rdctoken.io:49846
+addnode=n4.rdctoken.io:49846
+addnode=n5.rdctoken.io:49846
+addnode=n6.rdctoken.io:49846
+addnode=n7.rdctoken.io:49846
+addnode=n8.rdctoken.io:49846
+addnode=n9.rdctoken.io:49846
+addnode=n10.rdctoken.io:49846
+addnode=n11.rdctoken.io:49846
+addnode=n12.rdctoken.io:49846
+addnode=n13.rdctoken.io:49846
+addnode=n14.rdctoken.io:49846
+addnode=n15.rdctoken.io:49846
+addnode=n16.rdctoken.io:49846
+addnode=n17.rdctoken.io:49846
+addnode=n18.rdctoken.io:49846
+addnode=n19.rdctoken.io:49846
+addnode=n20.rdctoken.io:49846
 EOF
   chown -R $WORKER: $WORKER_FOLDER >/dev/null
 }
@@ -374,18 +264,6 @@ EOF
   fi
 }
 
-function install_sentinel() {
-	runuser -l worker01 -c 'cd /home/worker01/'
-	runuser -l worker01 -c "git clone ${GIT_SENT} /home/worker01/sentinel-zcr"
-	runuser -l worker01 -c 'virtualenv /home/worker01/sentinel-zcr/venv'
-	runuser -l worker01 -c '/home/worker01/sentinel-zcr/venv/bin/pip install -r /home/worker01/sentinel-zcr/requirements.txt'
-	runuser -l worker01 -c 'crontab -l > mycron'
-	runuser -l worker01 -c 'echo "* * * * * cd /home/worker01/sentinel-zcr && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1" >> mycron'
-	runuser -l worker01 -c 'crontab mycron'
-	runuser -l worker01 -c 'rm mycron'
-}
-
-
 function resumen() {
  echo
  echo -e "================================================================================================================================"
@@ -406,7 +284,6 @@ function setup_node() {
 	create_key
 	update_config
 	enable_firewall
-	#install_sentinel
 	systemd_up
 	resumen
 }
