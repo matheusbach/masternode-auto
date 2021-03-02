@@ -1,12 +1,11 @@
-# ZCore Masternode Auto Install
+# RDCToken Masternode Auto Install
 Shell script to install a ZCore MasterNode on a Linux server running Ubuntu 16.04 x64. Use it on your own risk.<br>
 Multiples MN in same VPS not tested<br>
-This script was tested on [www.vultr.com](https://www.vultr.com/?ref=7145379) Vps
 
 ***
 ## Installation:
 ```
-sudo curl -o- https://raw.githubusercontent.com/zcore-coin/masternode-auto/master/install.sh | bash
+sudo curl -o- https://raw.githubusercontent.com/matheusbach/rdct-masternode-auto/master/install.sh | bash
 ```
 ***
 
@@ -15,10 +14,10 @@ Follow the steps and save resumen information
 ## Desktop wallet setup
 
 After the MN is ZCore and running, you need to configure the desktop wallet accordingly. Here are the steps for ZCore Wallet
-1. Open the **ZCore Desktop Wallet**.
+1. Open the **RDCToken Desktop Wallet**.
 1. Go to RECEIVE and create a New Address: **MasterNode01**
-1. Send **5000** **ZCR** to **MasterNode01** address.
-1. Wait for 15 confirmations.
+1. Send **7500** **RDCT** to **MasterNode01** address.
+1. Wait for at least 6 confirmations.
 1. Go to **Tools -> "Debug console - Console"**
 1. Type the following command: **masternode outputs**
 1. Go to  **Tools -> "Open Masternode Configuration File"**
@@ -44,18 +43,18 @@ masternode start-alias MasterNode01
 ## Usage:
 Login with MasterNode User set on install Script
 ```
-zcore-cli mnsync status
-zcore-cli getinfo
-zcore-cli masternode status #This command will show your masternode status
+rdct-cli mnsync status
+rdct-cli getinfo
+rdct-cli masternode status #This command will show your masternode status
 ```
 
-Also, if you want to check/start/stop **zcore** , run one of the following commands as **root**:
+Also, if you want to check/start/stop **rdctoken** , run one of the following commands as **root**:
 
 ```
 systemctl status USER.service #To check the service is running.
-systemctl start USER.service #To start zcore service.
-systemctl stop USER.service #To stop zcore service.
-systemctl is-enabled USER.service #To check whetether zcore service is enabled on boot or not.
+systemctl start USER.service #To start rdctoken service.
+systemctl stop USER.service #To stop rdctoken service.
+systemctl is-enabled USER.service #To check whetether rdctoken service is enabled on boot or not.
 ```
 ***
 
@@ -64,6 +63,6 @@ systemctl is-enabled USER.service #To check whetether zcore service is enabled o
 Just run the update if you have installed your MN with the script above.<br>
 Run as root.
 ```
-sudo curl -o- https://raw.githubusercontent.com/zcore-coin/masternode-auto/master/update.sh | bash
+sudo curl -o- https://raw.githubusercontent.com/matheusbach/rdct-masternode-auto/master/update.sh | bash
 ```
 ***
