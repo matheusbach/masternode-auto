@@ -1,5 +1,5 @@
 # RDCToken Masternode Auto Install
-Shell script to install a ZCore MasterNode on a Linux server running Ubuntu 16.04 x64. Use it on your own risk.<br>
+Shell script to install a RDCToken MasterNode on a Linux server running Ubuntu 16.04 x64. Use it on your own risk.<br>
 Multiples MN in same VPS not tested<br>
 
 ***
